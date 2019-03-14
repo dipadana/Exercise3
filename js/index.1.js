@@ -42,3 +42,12 @@ var dipadana = {
 }
 
 //pasti pakai looping, manipulasi dom
+
+
+//simple script for display array in HTML
+var ulContent = "";
+for (i = 0; i <= 2; i++) {
+    var makan = ["nasi", "bakso", "soto"];
+    ulContent += "<li>" + makan[i] + "</li >";
+}
+document.getElementById('tabel').innerHTML = ulContent;
