@@ -5,7 +5,7 @@ function callData(a) {
     for (i = 0; i <= 9; i++) {
         dataTabel += "<tr>" +
             "<td>" + a[i].name + "</td>" +
-            "<td>" + a[i].rotation_period + "</td>" +
+            "<td>" + parseInt(a[i].rotation_period) + "</td>" +
             "<td>" + a[i].orbital_period + "</td>" +
             "<td>" + a[i].diameter + "</td>" +
             "<td>" + a[i].climate + "</td>" +
@@ -52,6 +52,7 @@ function nameSortReverse() {
     return nameSortResult;
 };
 
+//sort by climate
 function climateSort() {
     data.sort(function (a, b) {
         var nameA = a.climate.toUpperCase();
@@ -79,16 +80,45 @@ function climateSortReverse() {
         }
         return 0;
     })
-    //console.log(data);
     let nameSortResult = data;
     return nameSortResult;
 };
 
-document.getElementById('dataTabel').innerHTML = callData(data);
+//sort by rotation
+function rotationSort() {
+    data.sort(function (a, b) {
+        var numberA = parseInt(a.rotation_period);
+        var numberB = parseInt(b.rotation_period);
+        if (numberA < numberB) {
+            return -1;
+        }
+        if (numberA > numberB) {
+            return 1;
+        }
+        return 0;
+    })
+    let nameSortResult = data;
+    return nameSortResult;
+};
+function rotationSortReverse() {
+    data.sort(function (a, b) {
+        var numberA = parseInt(a.rotation_period);
+        var numberB = parseInt(b.rotation_period);
+        if (numberA > numberB) {
+            return -1;
+        }
+        if (numberA < numberB) {
+            return 1;
+        }
+        return 0;
+    })
+    let nameSortResult = data;
+    return nameSortResult;
+};
 
-var nameBtn = document.getElementById('sortName');
-nameBtn.addEventListener('click', myFunction);
-function myFunction() {
+document.getElementById('dataTabel').innerHTML = callData(rotationSortReverse(data));
+
+function sortName() {
     if (document.getElementById('dataTabel').innerHTML == callData(nameSort(data))) {
         document.getElementById('dataTabel').innerHTML = callData(nameSortReverse(data));
     }
@@ -96,3 +126,24 @@ function myFunction() {
         document.getElementById('dataTabel').innerHTML = callData(nameSort(data));
     }
 }
+
+function sortClimate() {
+    if (document.getElementById('dataTabel').innerHTML == callData(climateSort(data))) {
+        document.getElementById('dataTabel').innerHTML = callData(climateSortReverse(data));
+    }
+    else {
+        document.getElementById('dataTabel').innerHTML = callData(climateSort(data));
+    }
+}
+
+function sortRotation() {
+    if (document.getElementById('dataTabel').innerHTML == callData(rotationSort(data))) {
+        document.getElementById('dataTabel').innerHTML = callData(rotationSortReverse(data));
+    }
+    else {
+        document.getElementById('dataTabel').innerHTML = callData(rotationSort(data));
+    }
+}
+
+
+
