@@ -35,7 +35,11 @@ th{
     cursor: pointer;
 }
 
+th:hover {
+    background-color: #7c8d9c !important ;
+}
+
 .footer{
-    font-size: 15px;
+    font-size: 12px;
 }
 
