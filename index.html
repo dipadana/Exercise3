@@ -5,38 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" cosntent="ie=edge">
-
-
-    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Table Dipadana</title>
 </head>
 
 <body>
 
-    <div>
-        <table border="1">
-            <tbody>
+    <div class="container table-responsive">
+        <table class="table table-bordered table-hover table-sm">
+            <thead class="thead-dark">
                 <tr>
                     <th id="sortName" onclick="sortName();">Name</th>
                     <th id="sortRotation" onclick="sortRotation()">Rotation Period</th>
-                    <th>Orbital Period</th>
-                    <th>Diameter</th>
+                    <th id="sortOrbital" onclick="sortOrbital()">Orbital Period</th>
+                    <th id="sortDiameter" onclick="sortDiameter()">Diameter</th>
                     <th id="sortClimate" onclick="sortClimate();">Climate</th>
-                    <th>Gravity</th>
+                    <th id="sortGravity" onclick="sortGravity()">Gravity</th>
                     <th>Terrain</th>
-                    <th>Surface Water</th>
-                    <th>Population</th>
+                    <th id="sortSurface" onclick="sortSurface()">Surface Water</th>
+                    <th id="sortPopulation" onclick="sortPopulation()">Population</th>
                 </tr>
-            </tbody>
+            </thead>
             <tbody id="dataTabel"></tbody>
         </table>
     </div>
 
 </body>
 
-
 <script src="js/data.js"></script>
 <script src="js/index.js"></script>
-
-
 
 </html>
