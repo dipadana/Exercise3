@@ -158,7 +158,7 @@ var data = [{
     "climate": "temperate",
     "gravity": "1 standard",
     "terrain": "cityscape, mountains",
-    "surface_water": "unknown",
+    "surface_water": "N/A",
     "population": "1000000000000",
     "residents": [
         "https://swapi.co/api/people/34/",
